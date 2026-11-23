@@ -1,0 +1,60 @@
+{
+  "name": "weihnachten",
+  "colors": {
+    "bg": "#0b1630",
+    "bgSoft": "#14234a",
+    "panel": "#1b2d5c",
+    "text": "#f4f8ff",
+    "textDim": "#a9b8d9",
+    "accent": "#d63a3a",
+    "accent2": "#2f9e5a",
+    "gold": "#ffd23f",
+    "border": "#f4f8ff",
+    "error": "#ff6b6b",
+    "ok": "#5be37d"
+  },
+  "fonts": {
+    "pixel": { "family": "PixelFont", "file": "fonts/PressStart2P-Regular.ttf" },
+    "body": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  "particles": { "type": "snow", "count": 70, "color": "#ffffff" },
+  "texts": {
+    "title": "FSR Bingo",
+    "subtitle": "Die Weihnachtsfeier",
+    "noMotto": "Motto folgt",
+    "joinTitle": "Mitspielen",
+    "joinHint": "Wie sollen wir dich nennen?",
+    "joinPlaceholder": "Dein Nickname",
+    "joinButton": "Los geht's",
+    "hello": "Hallo",
+    "scanHint": "Scanne den Code und spiel mit",
+    "connecting": "Verbinde ...",
+    "offline": "Keine Verbindung, ich versuche es weiter ...",
+    "notConfigured": "Supabase ist noch nicht eingerichtet (js/config.js).",
+    "phases": {
+      "lobby":   { "name": "Lobby",      "hint": "Gleich geht's los. Schön, dass du dabei bist!" },
+      "collect": { "name": "Sammeln",    "hint": "Begriffe einsenden" },
+      "curate":  { "name": "Kuratieren", "hint": "Gleich geht's los" },
+      "cards":   { "name": "Karten",     "hint": "Karte checken" },
+      "draw":    { "name": "Ziehung",    "hint": "Streich deine Felder ab" },
+      "winner":  { "name": "Gewinner",   "hint": "Wir haben Gewinner" }
+    },
+    "admin": {
+      "loginTitle": "Manager-Login",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "login": "Einloggen",
+      "logout": "Ausloggen",
+      "notAdmin": "Dieser Account ist kein Admin.",
+      "phaseTitle": "Phase",
+      "settingsTitle": "Einstellungen",
+      "motto": "Motto",
+      "pollInterval": "Handy-Abfrage alle (Sekunden)",
+      "save": "Speichern",
+      "saved": "Gespeichert",
+      "participants": "Teilnehmer",
+      "online": "online",
+      "noParticipants": "Noch niemand beigetreten."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bingo Beamer</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="page-screen">
+  <main>
+    <div class="stage">
+      <h1 id="title">&nbsp;</h1>
+      <div id="motto" class="screen-motto"></div>
+      <div id="phase" class="screen-phase"></div>
+      <div id="hint" class="screen-hint"></div>
+      <div id="qr" class="qr-box"></div>
+      <div id="scan" class="screen-hint" data-t="scanHint"></div>
+      <div id="url" class="screen-url"></div>
+      <div id="msg" class="error"></div>
+    </div>
+  </main>
+  <div id="banner" class="conn-banner hidden"></div>
+
+  <script src="vendor/supabase.js"></script>
+  <script src="vendor/qrcode.js"></script>
+  <script type="module" src="js/screen.js"></script>
+</body>
+</html>

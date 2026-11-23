@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1630">
+  <title>Bingo</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="page-mobile">
+  <main>
+    <h1 id="title">&nbsp;</h1>
+
+    <section id="view-join" class="panel hidden">
+      <h2 data-t="joinTitle"></h2>
+      <form id="join-form" autocomplete="off">
+        <label for="nick" data-t="joinHint"></label>
+        <input id="nick" type="text" maxlength="20" required data-t-placeholder="joinPlaceholder">
+        <div id="join-error" class="error" role="alert"></div>
+        <button type="submit" data-t="joinButton"></button>
+      </form>
+    </section>
+
+    <section id="view-game" class="panel hidden">
+      <div class="dim"><span data-t="hello"></span> <strong id="who"></strong></div>
+      <div id="motto" class="pixel"></div>
+      <div id="phase" class="phase-name"></div>
+      <div id="hint"></div>
+    </section>
+
+    <div id="msg" class="error" role="alert"></div>
+  </main>
+  <div id="banner" class="conn-banner hidden"></div>
+
+  <script src="vendor/supabase.js"></script>
+  <script type="module" src="js/play.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Bingo Manager</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="page-admin">
+  <main>
+    <h1 id="title">&nbsp;</h1>
+
+    <section id="view-login" class="panel hidden">
+      <h2 data-t="admin.loginTitle"></h2>
+      <form id="login-form">
+        <label for="email" data-t="admin.email"></label>
+        <input id="email" type="email" autocomplete="username" required>
+        <label for="password" data-t="admin.password"></label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <div id="login-error" class="error" role="alert"></div>
+        <button type="submit" data-t="admin.login"></button>
+      </form>
+    </section>
+
+    <div id="view-admin" class="hidden">
+      <section class="panel">
+        <h2 data-t="admin.phaseTitle"></h2>
+        <div id="phase-buttons" class="phase-buttons"></div>
+        <div id="phase-error" class="error" role="alert"></div>
+      </section>
+
+      <section class="panel">
+        <h2 data-t="admin.settingsTitle"></h2>
+        <form id="settings-form">
+          <label for="motto" data-t="admin.motto"></label>
+          <input id="motto" type="text" maxlength="120">
+          <label for="poll" data-t="admin.pollInterval"></label>
+          <input id="poll" type="number" min="1" max="60" step="1">
+          <div id="settings-msg" class="error" role="alert"></div>
+          <button type="submit" data-t="admin.save"></button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2><span data-t="admin.participants"></span> (<span id="count-online">0</span>/<span id="count-all">0</span> <span data-t="admin.online"></span>)</h2>
+        <ul id="plist" class="plist"></ul>
+        <div id="plist-empty" class="dim" data-t="admin.noParticipants"></div>
+      </section>
+
+      <button id="logout" class="secondary" data-t="admin.logout"></button>
+    </div>
+
+    <div id="msg" class="error" role="alert"></div>
+  </main>
+  <div id="banner" class="conn-banner hidden"></div>
+
+  <script src="vendor/supabase.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

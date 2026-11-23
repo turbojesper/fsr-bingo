@@ -132,8 +132,8 @@ BingoApp/
 
 | Phase | Inhalt | Status |
 |---|---|---|
-| 0 | Setup, Repo, Supabase-Projekt, GitHub Pages | offen |
-| 1 | Fundament: Datenbank, Sicherheit, drei Ansichten, Join | offen |
+| 0 | Setup, Repo, Supabase-Projekt, GitHub Pages | Repo + Pages fertig, Supabase-Projekt offen (Jesper) |
+| 1 | Fundament: Datenbank, Sicherheit, drei Ansichten, Join | Code fertig, Test mit Supabase + 2 Handys offen |
 | 2 | Sammelphase, Wortwolke, Freigabe | offen |
 | 3 | Pool, Karten, Druckansicht | offen |
 | 4 | Ziehung, Pixel-Automat, Bingo-Prüfung | offen |
@@ -141,7 +141,20 @@ BingoApp/
 | 6 | Härtung, Lasttest, Generalprobe, Ablauf | offen |
 | 7 | Weitere Themes (Silvester, Halloween ...) | später |
 
+## Entscheidungen Phase 1
+
+- Seiten liegen im Hauptordner (`index.html`, `screen.html`, `admin.html`), damit die QR-URL kurz bleibt.
+- Admin = Eintrag in Tabelle `admins` (nicht jeder eingeloggte Account). Registrierung in Supabase ausschalten.
+- Teilnehmer schreiben nur per RPC (`join_game`, `poll_state`), Admin per `admin_*`-RPCs mit `is_admin()`-Prüfung. Anon darf nur `game_state` und `rounds` lesen.
+- "Online"-Status = Herzschlag: jeder `poll_state` setzt `last_seen_at`. Teilnehmerliste im Admin per Polling (5 s), nicht Realtime.
+- Realtime nur auf `game_state` und `rounds` (screen, admin). Handy-Poll-Intervall steht in der DB (`poll_interval_ms`), Admin stellt es ein.
+- Theme: `themes/<name>/theme.json` liefert Farben, Font, Texte, Partikel. Seiten nutzen `data-t`-Attribute und `t('pfad')`.
+- Lokal testen: Python-`http.server` bearbeitet nur eine Anfrage gleichzeitig, vereinzelte Verbindungsabbrüche beim ersten Laden sind dort normal (Neuladen hilft).
+
 ## Offene Punkte
+
+- Supabase-Projekt anlegen, URL + Key in `js/config.js`, SQL 01 bis 05 ausführen (Anleitung in README)
+- Abnahme Phase 1: Phasenwechsel auf screen + 2 Handys, Reload, Admin-Schutz
 
 - Offizieller Name der Feier (in der Sprachnachricht unklar, evtl. "WiWi Wonderland")
 - Preise und Anzahl Runden/Mottos
