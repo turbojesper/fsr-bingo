@@ -1,0 +1,20 @@
+# Rohmaterial und alte Versionen (lokal behalten, nie veröffentlichen)
+_input/
+Archiv/
+
+# Secrets
+.env
+.env.*
+
+# Musik und Audio (liegt lokal auf dem Laptop, Lizenz)
+*.mp3
+*.ogg
+*.wav
+*.m4a
+*.flac
+*.aac
+
+# OS-Müll
+Thumbs.db
+.DS_Store
+desktop.ini
